@@ -31,3 +31,12 @@
 /* .recipe-ingredients, .recipe-steps {
     border: 1px solid red;
 } */
+
+.recipe-steps {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.recipe-body {
+    margin-bottom: 30px;
+}
