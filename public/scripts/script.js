@@ -41,7 +41,10 @@ form.addEventListener("submit", function(event){
     let dateStr = "";
     const date = new Date();
     dateStr += date.getDate() + "-";
-    dateStr += date.getMonth() + "-";
+    
+    let month = Number(date.getMonth());
+    month++;
+    dateStr += month + "-";
     dateStr += date.getFullYear();
 
 
@@ -55,8 +58,6 @@ form.addEventListener("submit", function(event){
     commentBox.appendChild(commentBody);
 
     commentContainer.appendChild(commentBox);
-
-
 
 
 });
