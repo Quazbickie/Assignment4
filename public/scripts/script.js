@@ -27,7 +27,37 @@ form.addEventListener("submit", function(event){
     let enterredComment = comment.value;
     console.log(enterredUsername);
     console.log(enterredComment);
-    commentContainer.textContent = enterredUsername + "\n" + enterredComment;
+
+    const commentBox = document.createElement("div");
+    const commentUser = document.createElement("ul");
+    const commentBody = document.createElement("p");
+
+    const listUser = document.createElement("li");
+    listUser.id = 'user-name';
+    const listTimeStamp = document.createElement("li");
+
+    listUser.textContent = enterredUsername;
+
+    let dateStr = "";
+    const date = new Date();
+    dateStr += date.getDate() + "-";
+    dateStr += date.getMonth() + "-";
+    dateStr += date.getFullYear();
+
+
+    listTimeStamp.textContent = dateStr;
+    commentUser.appendChild(listUser);
+    commentUser.appendChild(listTimeStamp);
+
+    commentBody.textContent = enterredComment;
+
+    commentBox.appendChild(commentUser);
+    commentBox.appendChild(commentBody);
+
+    commentContainer.appendChild(commentBox);
+
+
+
 
 });
 

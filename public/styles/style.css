@@ -42,3 +42,14 @@
     margin-bottom: 30px;
 }
 
+.comment-container ul {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.comment-container #user-name {
+    margin-left: -2rem;
+}
+
