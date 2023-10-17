@@ -24,41 +24,48 @@ form.addEventListener("submit", function(event){
     event.preventDefault();
 
     let enterredUsername = userName.value;
-    let enterredComment = comment.value;
-    console.log(enterredUsername);
-    console.log(enterredComment);
 
-    const commentBox = document.createElement("div");
-    const commentUser = document.createElement("ul");
-    const commentBody = document.createElement("p");
+    if(enterredUsername == "hacker"){
+        alert("You are banned!");
+        form.reset();
+    } else {
+        let enterredComment = comment.value;
+        console.log(enterredUsername);
+        console.log(enterredComment);
 
-    const listUser = document.createElement("li");
-    listUser.id = 'user-name';
-    const listTimeStamp = document.createElement("li");
+        const commentBox = document.createElement("div");
+        const commentUser = document.createElement("ul");
+        const commentBody = document.createElement("p");
 
-    listUser.textContent = enterredUsername;
+        const listUser = document.createElement("li");
+        listUser.id = 'user-name';
+        const listTimeStamp = document.createElement("li");
 
-    let dateStr = "";
-    const date = new Date();
-    dateStr += date.getDate() + "-";
+        listUser.textContent = enterredUsername;
+
+        let dateStr = "";
+        const date = new Date();
+        dateStr += date.getDate() + "-";
+        
+        let month = Number(date.getMonth());
+        month++;
+        dateStr += month + "-";
+        dateStr += date.getFullYear();
+
+        listTimeStamp.textContent = dateStr;
+        commentUser.appendChild(listUser);
+        commentUser.appendChild(listTimeStamp);
+
+        commentBody.textContent = enterredComment;
+
+        commentBox.appendChild(commentUser);
+        commentBox.appendChild(commentBody);
+
+        commentContainer.appendChild(commentBox);
+        form.reset();
+
+    }
     
-    let month = Number(date.getMonth());
-    month++;
-    dateStr += month + "-";
-    dateStr += date.getFullYear();
-
-
-    listTimeStamp.textContent = dateStr;
-    commentUser.appendChild(listUser);
-    commentUser.appendChild(listTimeStamp);
-
-    commentBody.textContent = enterredComment;
-
-    commentBox.appendChild(commentUser);
-    commentBox.appendChild(commentBody);
-
-    commentContainer.appendChild(commentBox);
-
 
 });
 
