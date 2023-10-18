@@ -14,10 +14,21 @@
 
 // button.addEventListener("click", promptTest);
 
+
+//TODO: 
+// - Dark Mode Toggle
+// - Perform Date calc in function
+
+
+
+
+
 const form = document.getElementById('comment_form');
 const userName = form.elements['username'];
 const comment = form.elements['comment'];
 const commentContainer = document.getElementById('comment_holder');
+let commentArray = [];
+
 
 
 form.addEventListener("submit", function(event){
@@ -46,7 +57,6 @@ form.addEventListener("submit", function(event){
         let dateStr = "";
         const date = new Date();
         dateStr += date.getDate() + "-";
-        
         let month = Number(date.getMonth());
         month++;
         dateStr += month + "-";
@@ -56,11 +66,19 @@ form.addEventListener("submit", function(event){
         commentUser.appendChild(listUser);
         commentUser.appendChild(listTimeStamp);
 
+
         commentBody.textContent = enterredComment;
 
         commentBox.appendChild(commentUser);
         commentBox.appendChild(commentBody);
 
+        commentArray.push(commentBox);
+
+
+
+        //this needs to be replaced
+        //need to loop through array to display new contents of comment array
+        
         commentContainer.appendChild(commentBox);
         form.reset();
 
