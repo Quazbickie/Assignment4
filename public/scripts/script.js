@@ -18,10 +18,10 @@ form.addEventListener("submit", function(event){
     let commentUser = document.createElement("ul");
     let listUser = document.createElement("li");
     let commentBody = document.createElement("p");
+    let hr = document.createElement("hr");
+
 
     listUser.id = 'user-name';
-
-
 
 
     let userName = form.elements['username'];
@@ -60,6 +60,7 @@ form.addEventListener("submit", function(event){
         commentBody.textContent = comment.value;
 
         commentBox.appendChild(commentUser);
+        commentBox.appendChild(hr);
         commentBox.appendChild(commentBody);
         commentArray.push(commentBox);
 

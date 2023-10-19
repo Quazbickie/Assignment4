@@ -47,9 +47,15 @@
     display: flex;
     justify-content: space-between;
     list-style: none;
+    margin-bottom: -18px;
+}
+
+.comment-container p {
+    margin-bottom: 60px;
 }
 
 .comment-container #user-name {
     margin-left: -2rem;
+    font-weight: bolder;
 }
 
