@@ -1,34 +1,20 @@
-// const button = document.querySelector("button");
-
-
-
-// function promptTest() {
-//     const comment = prompt("What is your comment?");
-    
-//     console.log("Testing user input");
-
-//     const commentHolder = document.querySelector("#comment_holder");
-//     commentHolder.textContent = `${comment}`;
-
-// }
-
-// button.addEventListener("click", promptTest);
-
-
 //TODO: 
 // - Dark Mode Toggle
 // - Perform Date calc in function
-
-
-
-
+// - form validation
+// - assignment part 1+2/
 
 const form = document.getElementById('comment_form');
 const userName = form.elements['username'];
 const comment = form.elements['comment'];
 const commentContainer = document.getElementById('comment_holder');
 let commentArray = [];
-
+let commentBox = document.createElement("div");
+let commentUser = document.createElement("ul");
+let commentBody = document.createElement("p");
+let listUser = document.createElement("li");
+let listTimeStamp = document.createElement("li");
+listUser.id = 'user-name';
 
 
 form.addEventListener("submit", function(event){
@@ -40,72 +26,48 @@ form.addEventListener("submit", function(event){
         alert("You are banned!");
         form.reset();
     } else {
-        let enterredComment = comment.value;
-        console.log(enterredUsername);
-        console.log(enterredComment);
 
-        const commentBox = document.createElement("div");
-        const commentUser = document.createElement("ul");
-        const commentBody = document.createElement("p");
+        //need to remove the comments array of Div comments
+        //just because our comments need to be looped through
 
-        const listUser = document.createElement("li");
-        listUser.id = 'user-name';
-        const listTimeStamp = document.createElement("li");
+        while (commentContainer.firstChild) {
+            commentContainer.removeChild(commentContainer.firstChild);
+        }
 
         listUser.textContent = enterredUsername;
 
+        //create timestamp
+        //want to reinitialise this every time
+        //to get accurate timestamp
         let dateStr = "";
-        const date = new Date();
+        let date = new Date();
         dateStr += date.getDate() + "-";
         let month = Number(date.getMonth());
         month++;
         dateStr += month + "-";
         dateStr += date.getFullYear();
-
         listTimeStamp.textContent = dateStr;
+        
+        
         commentUser.appendChild(listUser);
         commentUser.appendChild(listTimeStamp);
 
-
-        commentBody.textContent = enterredComment;
+        commentBody.textContent = comment.value;
 
         commentBox.appendChild(commentUser);
         commentBox.appendChild(commentBody);
-
         commentArray.push(commentBox);
 
+ 
+        for(let i = 0; i < commentArray.length; i++){
+            console.log(commentArray[i]);
+            commentContainer.appendChild(commentArray[i]);
+        }
 
 
-        //this needs to be replaced
-        //need to loop through array to display new contents of comment array
-        
-        commentContainer.appendChild(commentBox);
         form.reset();
-
     }
     
 
 });
 
-
-
-
-
-// const login = prompt("What is your login?");
-
-// if (login == "Admin"){
-//     const password = prompt("Please enter your password");
-
-//     if(password == "TheMaster"){
-//         alert("Welcome!");
-//     } else if (password == '' || password == null){
-//         alert("Cancelled");
-//     } else {
-//         alert("Wrong Password");
-//     }
-
-// } else if (login == '' || login == null ) {
-//     alert("Cancelled");
-// } else {
-//     alert("I don't know you");
-// }
