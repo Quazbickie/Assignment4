@@ -79,19 +79,21 @@ form.addEventListener("submit", function(event){
         form.reset();
     }
 
-    //return created Time Stamp
-    //getMonth is cast to number and incremented by 1 as it returns a string 0-11
-    function getTimeStamp() {
-        let dateStr = "";
-        let date = new Date();
-        dateStr += date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + 
-                        date.getDate() + "-" + (Number(date.getMonth())+1) + "-" + date.getFullYear(); 
-        return dateStr;
-    }
-    
 
 });
 
 
+//return created Time Stamp
+//getMonth is cast to number and incremented by 1 as it returns a string 0-11
+function getTimeStamp() {
+    let dateStr = "";
+    let date = new Date();
+    dateStr += date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + 
+                    date.getDate() + "-" + (Number(date.getMonth())+1) + "-" + date.getFullYear(); 
+    return dateStr;
+}
 
-
+// function switchToDarkMode() {
+//     let element = document.body;
+//     element.classList.toggle("dark");
+// }
