@@ -4,6 +4,7 @@
 // - assignment part 1+2/
 
 const form = document.getElementById('comment_form');
+const buttonLocation = document.getElementById('submit-button');
 let commentContainer = document.getElementById('comment_holder');
 let commentArray = [];
 
@@ -73,9 +74,10 @@ form.addEventListener("submit", function(event){
         //each individual comment to the DOM
         for(let i = 0; i < commentArray.length; i++){
             console.log(commentArray[i]);
-            commentContainer.appendChild(commentArray[i]);
+            commentContainer.insertBefore(commentArray[i],commentContainer.firstElementChild);
         }
 
+        buttonLocation.scrollIntoView();
         form.reset();
     }
 
