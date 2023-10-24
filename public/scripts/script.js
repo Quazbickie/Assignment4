@@ -5,13 +5,13 @@
 
 const form = document.getElementById('comment_form');
 const buttonLocation = document.getElementById('submit-button');
-let commentContainer = document.getElementById('comment_holder');
 let commentArray = [];
 
 
 form.addEventListener("submit", function(event){
     event.preventDefault();
 
+    let commentContainer = document.getElementById('comment_holder');
     let commentDiv = document.createElement("div");         // I am appending a large Div containing Username and comments to the DOM
     let commentUser = document.createElement("ul");         // Each comment is made up of a username and comment section
     let listTimeStamp = document.createElement("li");       // the username is in the form of a list, with Username and Timestamp list items
@@ -39,13 +39,7 @@ form.addEventListener("submit", function(event){
         form.reset();
     } else {
 
-        //need to remove the comments array of Div comments
-        //just because our comments need to be looped through
-        //previously had simpler solution without use of loop.
-        while (commentContainer.firstChild) {
-            commentContainer.removeChild(commentContainer.firstChild);
-        }
-
+        
         //listItems to be appended are assigned here
         //ListUser item is filled with enterred username
         //listTimeStamp is filled from result of getTimeStamp() function
