@@ -47,6 +47,18 @@
     margin-bottom: 30px;
 }
 
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-container #individual-comment {
+    border: 0.3px solid grey;
+    border-radius: 12px;
+    padding: 10px;
+}
+
 .comment-container ul {
     /* border: 1px solid red; */
     display: flex;

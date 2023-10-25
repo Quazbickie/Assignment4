@@ -13,6 +13,7 @@ form.addEventListener("submit", function(event){
 
     let commentContainer = document.getElementById('comment_holder');
     let commentDiv = document.createElement("div");         // I am appending a large Div containing Username and comments to the DOM
+    commentDiv.id = 'individual-comment';
     let commentUser = document.createElement("ul");         // Each comment is made up of a username and comment section
     let listTimeStamp = document.createElement("li");       // the username is in the form of a list, with Username and Timestamp list items
     let listUser = document.createElement("li");            // the comment is stored in a paragraph element
@@ -84,8 +85,8 @@ form.addEventListener("submit", function(event){
 function getTimeStamp() {
     let dateStr = "";
     let date = new Date();
-    dateStr += date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + 
-                    date.getDate() + "-" + (Number(date.getMonth())+1) + "-" + date.getFullYear(); 
+    dateStr += "at   " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + 
+                    " on " + date.getDate() + "-" + (Number(date.getMonth())+1) + "-" + date.getFullYear(); 
     return dateStr;
 }
 
