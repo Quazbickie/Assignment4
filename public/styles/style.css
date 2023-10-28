@@ -3,6 +3,10 @@
     color: #e6e6e6;
 }
 
+html, body, footer {
+    background-color: #DDE1E7;
+}
+
 .recipe-header h1 {
     text-align: center;
     margin: 20px 0px 30px;
@@ -38,13 +42,24 @@
     border: 1px solid red;
 } */
 
+#ingredients {
+    /* box-shadow: 10px 10px 50px #54B4D3; */
+}
+
 .recipe-steps {
     text-align: justify;
     text-justify: inter-word;
 }
 
+#recipe-one, #recipe-two {
+    /* box-shadow: 20px 20px 50px grey; */
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
+                10px 10px 15px rgba(70,70,70,0.12);
+}
+
 .recipe-body {
     margin-bottom: 30px;
+    
 }
 
 .comment-container{
@@ -57,8 +72,8 @@
     border: 0.3px solid grey;
     border-radius: 12px;
     padding: 10px;
-    box-shadow: 2px 5px 10px black;
-}
+    box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
+    10px 10px 15px rgba(70,70,70,0.12);}
 
 .comment-container ul {
     /* border: 1px solid red; */
