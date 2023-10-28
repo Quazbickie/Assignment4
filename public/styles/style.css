@@ -50,13 +50,14 @@
 .comment-container{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .comment-container #individual-comment {
     border: 0.3px solid grey;
     border-radius: 12px;
     padding: 10px;
+    box-shadow: 2px 5px 10px black;
 }
 
 .comment-container ul {
