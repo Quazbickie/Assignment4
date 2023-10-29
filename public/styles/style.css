@@ -66,14 +66,17 @@ html, body, footer {
     display: flex;
     flex-direction: column;
     gap: 20px;
+
 }
 
 .comment-container #individual-comment {
     border: 0.3px solid grey;
     border-radius: 12px;
     padding: 10px;
+    background-color: #FBFBFB;
     box-shadow: -10px -10px 15px rgba(255,255,255,0.5),
-    10px 10px 15px rgba(70,70,70,0.12);}
+    10px 10px 15px rgba(70,70,70,0.12);
+}
 
 .comment-container ul {
     /* border: 1px solid red; */
